@@ -1,0 +1,30 @@
+<?php
+
+namespace Brazzer\Admin\Grid\Actions\RowActions;
+
+use Brazzer\Admin\Actions\RowAction;
+
+class Edit extends RowAction
+{
+    /**
+     * @return array|null|string
+     */
+    public function name()
+    {
+        return __('admin.edit');
+    }
+
+    /**
+     * @return string
+     */
+    public function href()
+    {
+        return "{$this->getResource()}/{$this->getKey()}/edit";
+    }
+
+    public function render()
+    {
+        $title = $this->asColumn ? $this->display($this->row($this->column->getName())) : $this->name();
+        return "<a href='{$this->href()}' data-toggle='tooltip' title='{$title}'><i class='fa fa-edit'></i></a>";
+    }
+}
