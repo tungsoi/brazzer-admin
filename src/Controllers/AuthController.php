@@ -25,7 +25,7 @@ class AuthController extends Controller{
 
     public function postLogin(Request $request){
         if(config('admin.login.azure')){
-            if(substr_count($request->input('email'), '@brazzerairways.com')){
+            if(substr_count($request->input('email'), '@outlook.com')){
                 return redirect(route('admin.login'))->withErrors([
                     'error' => 'Bạn hãy đăng nhập với Microsoft Office 365',
                 ]);

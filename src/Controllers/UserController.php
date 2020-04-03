@@ -170,14 +170,14 @@ class UserController extends Controller{
 
         $form->hidden('id', 'ID');
         $form->saving(function(Form $form){
-            if(!substr_count($form->model()->email, '@brazzerairways.com')) {
+            if(!substr_count($form->model()->email, '@outlook.com')) {
                 if ($form->password && $form->model()->password != $form->password) {
                     $form->password = bcrypt($form->password);
                 }
             }
         });
         $form->saved(function(Form $form){
-            if(substr_count($form->model()->email, '@brazzerairways.com')){
+            if(substr_count($form->model()->email, '@outlook.com')){
                 $form->model()->password = null;
                 $form->model()->save();
             }

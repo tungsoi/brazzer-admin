@@ -13,9 +13,9 @@ class AdminTablesSeeder extends Seeder{
     public function run(){
         // create a user.
         //Administrator::truncate();
-        if(Administrator::where('email', 'admin@brazzerairways.com')->count() == 0){
+        if(Administrator::where('email', 'admin@gmail.com')->count() == 0){
             Administrator::create([
-                'email'    => 'admin@brazzerairways.com',
+                'email'    => 'admin@gmail.com',
                 'password' => bcrypt('admin'),
                 'name'     => 'Administrator',
             ]);

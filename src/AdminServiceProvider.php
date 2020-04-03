@@ -104,7 +104,7 @@ class AdminServiceProvider extends ServiceProvider{
             $this->publishes([__DIR__ . '/../config/site_config.php' => config_path('site_config.php')], 'site_config');
             $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'laravel-admin-lang');
             $this->publishes([__DIR__ . '/../database/migrations' => database_path('migrations')], 'laravel-admin-migrations');
-            $this->publishes([__DIR__ . '/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
+            $this->publishes([__DIR__ . '/../resources/assets' => public_path('brazzer-admin')], 'laravel-admin-assets');
         }
     }
 
